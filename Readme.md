@@ -18,4 +18,4 @@ Image extraction:
 
 ## Results
 
-The results can be viewed in the `results.html` webpage.
+The results can be viewed in the `results.html` webpage ([direct link](https://tihbs.github.io/blockchain-diagram-symbols/results)).

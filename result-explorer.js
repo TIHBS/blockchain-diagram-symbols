@@ -28,6 +28,29 @@ function prepareHtml() {
 
     setupStatistics(statisticsContainer);
     setupFilters(filtersContainer, resultJson, selectors, selectorsOfImage);
+    fixImageLinks();
+}
+
+function fixImageLinks() {
+    d3.select('#annotations').selectAll('.level2').each(function () {
+        const searchProvider = d3.select(this);
+        if (searchProvider.attr('id') == 'duckduckgo') {
+            // let the image source be the original image link
+            searchProvider.selectAll('a').datum(function () {
+                return d3.select(this).attr('href');
+            }).select('img').attr('src', function(d) {return d;});
+        }
+        if (searchProvider.attr('id') == 'metager') {
+            // let the image source be the original image link
+            searchProvider.selectAll('a').datum(function () {
+                return d3.select(this).attr('href');
+            }).select('img').attr('src', function(d) {return d;});
+        }
+        if (searchProvider.attr('id') == 'google-scholar') {
+            // let the link point to the overview containing all paper references
+            searchProvider.selectAll('a').attr('href', 'overview.md');
+        }
+    });
 }
 
 function createId(someString) {
