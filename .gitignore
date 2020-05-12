@@ -1,0 +1,12 @@
+annotations.html
+
+# Copyrighted images/pdfs
+google-scholar/images/unusable
+google-scholar/images/*.png
+google-scholar/images/*.jpg
+google-scholar/*.pdf
+duckDuckGo/*/saved_resource*
+duckDuckGo/*/*.png
+duckDuckGo/*/*.ico
+duckDuckGo/*/*.svg
+metaGer/*/picture*

@@ -1,0 +1,52 @@
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="result-explorer.js" defer></script>
+<style>
+    html {height: 100%;}
+    body {
+        height: 100%;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 35rem auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: "TOC results" "pictures results";
+    }
+    div#TOC {
+        grid-area: TOC;
+        padding-left: 2rem;
+        padding-bottom: 2rem;
+    }
+    div#annotations {
+        grid-area: pictures;
+        padding-left: 2rem;
+        padding-bottom: 4rem;
+    }
+    div#results {
+        grid-area: results;
+    }
+    img {
+        max-width: 474px;
+    }
+    .filters {
+        line-height: 1.5;
+        overflow-wrap: break-word;
+    }
+    .filters:first-child {
+        padding-left: 0;
+    }
+    .filters span {
+        cursor: pointer;
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        color: darkgray;
+        background-color: ghostwhite;
+    }
+    .filters span:hover {
+        opacity: 0.5;
+    }
+    .filters span.selected {
+        color: black;
+        background-color: aliceblue;
+    }
+</style>
