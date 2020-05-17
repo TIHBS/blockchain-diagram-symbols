@@ -25,6 +25,8 @@ Only shapes with at least 10% are drawn for each element. With the exception tha
 
 Some element specifications do not imply a shape and are not drawn. This includes '2d', 'isometric', '3d', 'numbered', 'with hashes' and '"tx"'.
 
+**License:** All of the following svg images may be used for any (lawful) purpose without mentioning the original author.
+
 ## nodes
 
 1. **circle**               (41/87)     47.1 %
@@ -33,8 +35,6 @@ Some element specifications do not imply a shape and are not drawn. This include
 4. rectangle            (12/87)     13.8 %
 5. smart phone          (12/87)     13.8 %
 6. rounded corners      (9/87)      10.3 %
-
-PC and Smart Phone could also be used as node modifiers (maybe more pictograms)
 
 <svg>
     <g>
@@ -98,7 +98,7 @@ PC and Smart Phone could also be used as node modifiers (maybe more pictograms)
 
 <svg>
     <g>
-        <path d="M 0,60 l 40,0 l 20,-20 l 0,-40 l -40,0 l -20,20 z M 0,20 l 40,0 l 20,-20 M 40,20 l0,40"></path>
+        <path d="M 0,60 h 50 l 10,-10 v -50 h -50 l -10,10 z m 0,-50 h 50 l 10,-10 m -10,10 v 50"></path>
         <text x="30" y="75">2. cube</text>
     </g>
     <g transform="translate(70)">
@@ -143,8 +143,6 @@ PC and Smart Phone could also be used as node modifiers (maybe more pictograms)
 2. ‘tx’         (13/42)     31.0 %
 3. coin         (6/42)      14.3 %
 
-4. **octagon?** (completely new shape)
-
 <svg>
     <g>
         <rect stroke="black" fill="white" x="5" y="0" width="50" height="60"></rect>
@@ -156,15 +154,33 @@ PC and Smart Phone could also be used as node modifiers (maybe more pictograms)
         <text x="30" y="35">$</text>
         <text x="30" y="75">3. coin</text>
     </g>
-    <g transform="translate(140)">
+</svg>
+
+Additional shapes consided:
+
+<svg>
+    <g transform="translate(0)">
         <polygon points="17,0 43,0 60,17 60,43 43,60 17,60 0,43 0,17" />
-        <text x="30" y="75">4. octagon</text>
+        <text x="30" y="75">octagon</text>
     </g>
-    <g transform="translate(210)">
+    <g transform="translate(70)">
+        <polygon points="0,30 14,0 46,0 60,30 46,60 14,60"></polygon>
+        <text x="30" y="75">hexagon</text>
+    </g>
+    <g transform="translate(140)">
         <polygon points="5,0 40,0 55,15 55,60 20,60 5,45"></polygon>
     </g>
-    <g transform="translate(280)">
+    <g transform="translate(210)">
         <polygon points="30,0 60,25 48,60 12,60 0,25"></polygon>
+        <text x="30" y="75">pentagon</text>
+    </g>
+    <g transform="translate(280)">
+        <path d="M 5,20 h 50 v 20 h -50 z"></path>
+        <ellipse cx="30" cy="30" rx="10" ry="7.5"></ellipse>
+    </g>
+    <g transform="translate(350)">
+        <circle cx="30" cy="30" r="25"></circle>
+        <rect x="26" y="26" width="8" height="8"></rect>
     </g>
 </svg>
 
@@ -175,10 +191,6 @@ PC and Smart Phone could also be used as node modifiers (maybe more pictograms)
 1. rounded corners      (4/39)      10.3 %
 1. wavy bottom          (4/39)      10.3 %
 1. wavy top             (4/39)      10.3 %
-
-Small: pictogram (e.g. three blocks together)
-
-Pictogram can also be used as a node modifier
 
 <svg>
     <g>
@@ -200,6 +212,23 @@ Pictogram can also be used as a node modifier
     <g transform="translate(280)">
         <path d="M 0,45 c 20,-20 40,20 60,0 l 0,-40 l -60,0 z"></path>
         <text x="30" y="75">4. wavy b.</text>
+    </g>
+</svg>
+
+Additional shape considered:
+
+<svg>
+    <g>
+        <path d="M 0,40 h 16.666666 l 3.333333,-3.333333 v -16.666666 h -16.666666 l -3.333333,3.333333 z m 0,-16.666666 h 16.666666 l 3.333333,-3.333333 m -3.333333,3.333333 v 16.666666"></path>
+        <path d="M 16.666666,40 h 16.666666 l 3.333333,-3.333333 v -16.666666 h -16.666666 l -3.333333,3.333333 z m 0,-16.666666 h 16.666666 l 3.333333,-3.333333 m -3.333333,3.333333 v 16.666666"></path>
+        <path d="M 33.333333,40 h 16.666666 l 3.333333,-3.333333 v -16.666666 h -16.666666 l -3.333333,3.333333 z m 0,-16.666666 h 16.666666 l 3.333333,-3.333333 m -3.333333,3.333333 v 16.666666"></path>
+        <!-- chains -->
+        <path fill="black" d="M 6,28.333333 h 4.666666 c 5,0 5,6.666666 0,6.666666 h -4.666666 c -5,0 -5,-6.666666 0,-6.666666 z m 0,5 h 4.666666 c 2.333333,0 2.333333,-3.333333 0,-3.333333 h -4.666666 c -2.333333,0 -2.333333,3.333333 0,3.333333 z"></path>
+        <path fill="black" d="M 22.666666,28.333333 h 4.666666 c 5,0 5,6.666666 0,6.666666 h -4.666666 c -5,0 -5,-6.666666 0,-6.666666 z m 0,5 h 4.666666 c 2.333333,0 2.333333,-3.333333 0,-3.333333 h -4.666666 c -2.333333,0 -2.333333,3.333333 0,3.333333 z"></path>
+        <path fill="black" d="M 39.333333,28.333333 h 4.666666 c 5,0 5,6.666666 0,6.666666 h -4.666666 c -5,0 -5,-6.666666 0,-6.666666 z m 0,5 h 4.666666 c 2.333333,0 2.333333,-3.333333 0,-3.333333 h -4.666666 c -2.333333,0 -2.333333,3.333333 0,3.333333 z"></path>
+        <polyline stroke-width="2" points="11,31.666666 22.2,31.666666"></polyline>
+        <polyline stroke-width="2" points="27.666666,31.666666 38.866666,31.666666"></polyline>
+        <text x="25" y="75">icon</text>
     </g>
 </svg>
 
@@ -299,45 +328,3 @@ Pickaxe as modifier for a node
         <text x="30" y="75">2. pickaxe</text>
     </g>
 </svg>
-
-# Additional Shapes
-
-## General Group
-
-Rectangle, dashed lines, round corners
-
-<svg>
-    <g>
-        <rect stroke="black" stroke-dasharray="4" fill="white" x="5" y="0" width="50" height="60" rx="10"></rect>
-    </g>
-</svg>
-
-## Message
-
-Envelope, with direction
-
-<svg>
-    <g>
-        <rect x="5" y="0" width="50" height="30"></rect>
-        <polyline points="5,0 30,15 55,0"></polyline>
-    </g>
-</svg>
-
-## Link direction ??
-
-arrow on link or on message?
-
-## Blockchain clients
-
-Node with modifier (PC, Smart Phone)
-
-## Software Components
-
-Layered architecture diagram
-
-The expanded state of a node?
-
-## Repository/Databse
-
-Database icon
-

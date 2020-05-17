@@ -1,5 +1,30 @@
 'esversion: 6';
 
+/**
+ * Copyright © 2020 Fabian Bühler
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the “Software”), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+ * of the Software, and to permit persons to whom the Software is furnished to
+ * do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
+/**
+ * Prepare the dom and parse and display the results.
+ */
 function prepareHtml() {
     d3.select('div#TOC').append('h1').text('Table of Contents').lower();
     const resultsContainer = d3.select('body').append('div').attr('id', 'results');
@@ -31,6 +56,9 @@ function prepareHtml() {
     fixImageLinks();
 }
 
+/**
+ * Fix image links to point to original link as copyrighted images are excluded from this repository.
+ */
 function fixImageLinks() {
     d3.select('#annotations').selectAll('.level2').each(function () {
         const searchProvider = d3.select(this);
@@ -53,10 +81,18 @@ function fixImageLinks() {
     });
 }
 
+/**
+ * Create a string that can be safely used as a css classname in a deterministic way.
+ *
+ * @param {string} someString
+ */
 function createId(someString) {
     return someString.toLowerCase().trim().replace(/\s+/g, '-').replace(/\W/g, '-');
 }
 
+/**
+ * Parse the results.
+ */
 function parseResults() {
     const result = {};
     const selectors = new Map();
@@ -69,6 +105,9 @@ function parseResults() {
     };
 }
 
+/**
+ * Parse the search origins.
+ */
 function parseSearchIds(selection, result, selectors, selectorsOfImage) {
     selection.each(function () {
         const sel = d3.select(this);
@@ -80,6 +119,9 @@ function parseSearchIds(selection, result, selectors, selectorsOfImage) {
     });
 }
 
+/**
+ * Parse the search term used.
+ */
 function parseSearchtexts(selection, searchProviderId, searches, selectors, selectorsOfImage) {
     selection.each(function () {
         const sel = d3.select(this);
@@ -106,6 +148,9 @@ function parseSearchtexts(selection, searchProviderId, searches, selectors, sele
     });
 }
 
+/**
+ * parse all search results and tags.
+ */
 function parseSearchResults(selection, search, selectors, selectorsOfImage) {
     selection.each(function () {
         const sel = d3.select(this);
@@ -227,6 +272,9 @@ function parseSearchResults(selection, search, selectors, selectorsOfImage) {
     });
 }
 
+/**
+ * Seatup the filters section and add click handlers to the filters.
+ */
 function setupFilters(filtersContanier, resultJson, selectors, selectorsOfImage) {
     const allImages = [];
     const imageToSearchMap = new Map();
@@ -455,6 +503,9 @@ function setupFilters(filtersContanier, resultJson, selectors, selectorsOfImage)
     updateSelectedImages();
 }
 
+/**
+ * Setup the statistics section.
+ */
 function setupStatistics(statisticsContainer) {
     statisticsContainer.append('h2').text('Statistics');
 
@@ -479,6 +530,9 @@ function setupStatistics(statisticsContainer) {
     specificsStatistics.append('ol').style('max-width', '40em').classed('specifics-statistic', true);
 }
 
+/**
+ * Update the statistics section when the filters change.
+ */
 function updateStatistics(images, selectors, selectorsOfImage) {
     const numberOfImages = images.length;
     const selectorCounts = new Map();
@@ -616,4 +670,5 @@ function updateStatistics(images, selectors, selectorsOfImage) {
 
 }
 
+// call "main" method
 prepareHtml();
